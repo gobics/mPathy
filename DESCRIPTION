@@ -1,0 +1,12 @@
+Package: mPathy
+Type: Package
+Title: Ultrafast pathway reconstruction from metatranscriptomic and metegenomic reads
+Version: 1.0
+Date: 2017-06-15
+Author: Sebastian Gross [aut],
+        Heiner Klingenberg [aut,cre],
+        Peter Meinicke [ctb]
+Maintainer: Heiner Klingenberg <heiner@gobics.de>
+Description: TODO
+License: AGPL (>= 3.0)
+Collate: globals.R common.R init.R auxiliary.R core.R 
