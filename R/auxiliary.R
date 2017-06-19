@@ -1,3 +1,4 @@
+# contains methods being used throughout the whole package
 
 convert_Int.Kegg =
 function( keggStr )

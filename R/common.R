@@ -1,3 +1,5 @@
+# CONTAINS COMMON METHODS IE. SYNTACTIC SUGAR
+
 print.File =
 function( fileName )
 {
@@ -54,18 +56,20 @@ function()
 create.ConfigFile =
 function()
 {
-    return(
-      dir.create(
-         CONFIG_DIRECTORY,
+    # TODO: Sebastian - adapt to interactive
+
+    dir.create(
+         CONFIG_PATH,
          showWarnings = TRUE,
          )
-    &&
-      file.copy(
-         CONFIG_TEMP_FILE,
+    
+
+    file.copy(
+         CONFIG_TEMP,
          CONFIG_FILE,
          overwrite = TRUE
          )
-    )
+    
 }
 
 edit.ConfigFile.Keys = 
