@@ -11,7 +11,7 @@ function( libName, pkgName )
    rm( list = ls( ._CONFIG ), envir = ._CONFIG )
    load.ConfigFile()
 
-   if ( ._CONFIG$SHOW_LICENSE_TEXT )
+   if ( ._CONFIG$SHOW_LICENCE_TEXT )
    {
       print.File( LICENCE_FILE )
    }

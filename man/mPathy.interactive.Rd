@@ -2,7 +2,7 @@
 \alias{mPathy.interactive}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Editing the mPathy.Object
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

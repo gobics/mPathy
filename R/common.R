@@ -22,7 +22,7 @@ load.ConfigFile =
 function()
 {
     if ( check.ConfigFile() )
-       load.ConfigFileKeys( read.ConfigFileKeys() )
+       load.ConfigFile.Keys( read.ConfigFile.Keys() )
     else
       stop( 'FAILED TO LOAD/CREATE CONFIG FILE!')
 }
@@ -31,7 +31,7 @@ check.ConfigFile =
 function()
 {
     if ( ! file.exists( CONFIG_FILE ) )
-        return( create.ConfigFile )
+        return( create.ConfigFile() )
 
     if ( ! isValid.ConfigFile() )
         return( FALSE )
@@ -56,20 +56,25 @@ function()
 create.ConfigFile =
 function()
 {
-    # TODO: Sebastian - adapt to interactive
+   print(CONFIG_TEMP)
+   print(CONFIG_FILE)
 
+   print( file.exists(CONFIG_TEMP))
+
+   print(readLines(CONFIG_TEMP))
+
+    return(
     dir.create(
          CONFIG_PATH,
          showWarnings = TRUE,
          )
-    
-
+   &&
     file.copy(
          CONFIG_TEMP,
          CONFIG_FILE,
          overwrite = TRUE
          )
-    
+    )
 }
 
 edit.ConfigFile.Keys = 
@@ -85,8 +90,8 @@ function( ... )
     values = c( pair[ keepIdx, 2], ... )
 
     headerLines = c(
-        bindStrings( CONFIG_FILE_COMMENT, CONFIG_FILE_HASH ),
-        bindStrings( CONFIG_FILE_COMMENT, PCKG_VERSION )
+        concat( CONFIG_FILE_COMMENT, CONFIG_FILE_HASH ),
+        concat( CONFIG_FILE_COMMENT, PCKG_VERSION )
     )
     contentLines = sprintf( CONFIG_FILE_ENTRY_FORMATTER, keys, values )
 
@@ -111,7 +116,7 @@ function()
     lines = readLines(CONFIG_FILE)
     
     # REMOVE COMMENTARY LINES
-    lines = grep(bindStrings('^[^', CONFIG_FILE_COMMENT, ']'), lines, value = TRUE)
+    lines = grep(concat('^[^', CONFIG_FILE_COMMENT, ']'), lines, value = TRUE)
 
     varKeys = gsub(CONFIG_FILE_ENTRY_PATTERN, '\\1', lines)
     varValues = gsub(CONFIG_FILE_ENTRY_PATTERN, '\\2', lines)

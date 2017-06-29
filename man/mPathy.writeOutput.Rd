@@ -2,7 +2,7 @@
 \alias{mPathy.writeOutput}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Creating HTML Output
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
